@@ -1,1 +1,2 @@
-console.log('!!!');
+const contacts = require('./contacts.js');
+contacts.listContacts();
