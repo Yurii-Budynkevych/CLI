@@ -12,6 +12,15 @@ const listContacts = async function () {
   }
 };
 
+const getContact = async function (id) {
+  try {
+    const data = await fs.readFile(contactsPath, 'utf8');
+    console.log(data[id]);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const addContact = async function (cnt) {
   try {
     const data = await fs.readFile(contactsPath, 'utf8');
@@ -24,5 +33,6 @@ const addContact = async function (cnt) {
 
 module.exports = {
   listContacts,
+  getContact,
   addContact,
 };
